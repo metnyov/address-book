@@ -1,0 +1,17 @@
+<resources>
+
+    <style name="Theme.App" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorSecondary">@color/secondary</item>
+    </style>
+
+    <style name="Theme.App.Launcher" parent="Theme.App.Base">
+        <item name="android:windowBackground">@color/violet_blue</item>
+    </style>
+
+    <style name="Theme.App.Base">
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+</resources>

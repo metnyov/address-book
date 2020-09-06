@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base -->
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="violet_blue">#5e00c6</color>
+
+    <!-- Main -->
+    <color name="primary">@color/white</color>
+    <color name="primary_variant">@color/white</color>
+    <color name="secondary">@color/violet_blue</color>
+
+    <color name="background">@color/white</color>
+</resources>
