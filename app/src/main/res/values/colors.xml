@@ -11,4 +11,5 @@
     <color name="secondary">@color/violet_blue</color>
 
     <color name="background">@color/white</color>
+    <color name="background_loading">#66ffffff</color>
 </resources>
