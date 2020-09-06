@@ -21,4 +21,5 @@ object LibraryVersion {
     const val MOSHI = "1.9.3"
     const val MOXY = "2.1.2"
     const val HAWK = "2.0.1"
+    const val ROOM = "2.2.5"
 }

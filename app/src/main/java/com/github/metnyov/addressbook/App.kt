@@ -4,6 +4,9 @@ import android.os.StrictMode
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.multidex.MultiDexApplication
 import com.facebook.stetho.Stetho
+import com.github.metnyov.addressbook.di.apiModule
+import com.github.metnyov.addressbook.di.interactorModule
+import com.github.metnyov.addressbook.di.sourceModule
 import com.orhanobut.hawk.Hawk
 import org.kodein.di.DI
 import org.kodein.di.DIAware
@@ -14,6 +17,9 @@ class App : MultiDexApplication(), DIAware {
 
     override val di: DI = DI.lazy {
         import(androidXModule(this@App))
+        import(apiModule)
+        import(sourceModule)
+        import(interactorModule)
     }
 
     override fun onCreate() {

@@ -36,6 +36,8 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "HOST", "\"${extra["HOST"] as String}\"")
     }
 
     buildTypes {
@@ -124,4 +126,9 @@ dependencies {
 
     // Hawk
     implementation("com.orhanobut:hawk:${LibraryVersion.HAWK}")
+
+    // Room
+    implementation("androidx.room:room-runtime:${LibraryVersion.ROOM}")
+    implementation("androidx.room:room-ktx:${LibraryVersion.ROOM}")
+    kapt("androidx.room:room-compiler:${LibraryVersion.ROOM}")
 }
