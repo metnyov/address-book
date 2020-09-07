@@ -12,6 +12,6 @@ interface DepartmentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(vararg departments: Department)
 
-    @Query("SELECT * FROM Department WHERE parentId == :parentId")
+    @Query("SELECT * FROM Department WHERE parentId IS :parentId")
     suspend fun getByParentId(parentId: String?): List<Department>
 }

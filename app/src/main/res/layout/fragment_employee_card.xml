@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarEmployeeCard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        tools:title="ИТ Отдел" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEmployeeCardName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:lineSpacingExtra="8sp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/ivEmployeeCardPhoto"
+        app:layout_constraintTop_toBottomOf="@id/toolbarEmployeeCard"
+        tools:text="Иванов\nИван\nИванович" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEmployeeCardPhoto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="3:4"
+        app:layout_constraintEnd_toStartOf="@id/tvEmployeeCardName"
+        app:layout_constraintHorizontal_weight="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarEmployeeCard"
+        tools:src="@color/greyish_purple" />
+
+    <com.github.metnyov.addressbook.presentation.view.LoadingView
+        android:id="@id/loadingView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivEmployeeCardPhoto"
+        app:layout_constraintEnd_toEndOf="@id/ivEmployeeCardPhoto"
+        app:layout_constraintStart_toStartOf="@id/ivEmployeeCardPhoto"
+        app:layout_constraintTop_toTopOf="@id/ivEmployeeCardPhoto" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEmployeeCardPosition"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="bottom"
+        android:lineSpacingExtra="6sp"
+        android:textColor="@color/greyish_purple"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivEmployeeCardPhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvEmployeeCardName"
+        app:layout_constraintTop_toBottomOf="@id/tvEmployeeCardName"
+        app:layout_constraintVertical_bias="1"
+        tools:text="Должность:\nНачальник ИТ Отдела" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tvEmployeeCardPosition,ivEmployeeCardPhoto" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEmployeeCardPhone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="16dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/violet_blue"
+        app:drawableTint="@color/violet_blue"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
+        tools:text="+7 (900) 000-00-00" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEmployeeCardEmail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="16dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/violet_blue"
+        app:drawableTint="@color/violet_blue"
+        app:layout_constraintTop_toBottomOf="@id/tvEmployeeCardPhone"
+        tools:text="myemail@mail.ru" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -82,6 +82,7 @@ dependencies {
     // Widgets
     implementation("androidx.constraintlayout:constraintlayout:${LibraryVersion.CONSTRAINT_LAYOUT}")
     implementation("androidx.recyclerview:recyclerview:${LibraryVersion.RECYCLER_VIEW}")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:${LibraryVersion.SWIPE_REFRESH_LAYOUT}")
 
     // UI
     implementation("com.google.android.material:material:${LibraryVersion.MATERIAL}")
@@ -96,10 +97,8 @@ dependencies {
     // Cicerone
     implementation("ru.terrakok.cicerone:cicerone:${LibraryVersion.CICERONE}")
 
-    // Glide
-    implementation("com.github.bumptech.glide:glide:${LibraryVersion.GLIDE}")
-    implementation("com.github.bumptech.glide:okhttp3-integration:${LibraryVersion.GLIDE}")
-    kapt("com.github.bumptech.glide:compiler:${LibraryVersion.GLIDE}")
+    // Picasso
+    implementation("com.squareup.picasso:picasso:${LibraryVersion.PICASSO}")
 
     // OkHttp
     implementation("com.squareup.okhttp3:logging-interceptor:${LibraryVersion.LOGGING_INTERCEPTOR}")

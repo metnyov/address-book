@@ -12,9 +12,6 @@ interface EmployeeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(vararg employees: Employee)
 
-    @Query("SELECT id FROM Employee")
-    suspend fun getIds(): List<String>
-
-    @Query("SELECT * FROM Employee WHERE departmentId == :departmentId")
+    @Query("SELECT * FROM Employee WHERE departmentId IS :departmentId")
     suspend fun getByDepartmentId(departmentId: String): List<Employee>
 }

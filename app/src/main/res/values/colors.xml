@@ -4,9 +4,10 @@
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="violet_blue">#5e00c6</color>
+    <color name="greyish_purple">#888294</color>
 
     <!-- Main -->
-    <color name="primary">@color/white</color>
+    <color name="primary">@color/violet_blue</color>
     <color name="primary_variant">@color/white</color>
     <color name="secondary">@color/violet_blue</color>
 

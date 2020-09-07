@@ -4,8 +4,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.github.metnyov.addressbook.R
 import com.github.metnyov.addressbook.di.presentationModule
+import com.github.metnyov.addressbook.domain.source.AuthDao
+import com.github.metnyov.addressbook.domain.source.isAuthorized
 import com.github.metnyov.addressbook.presentation.common.navigation.AnimatedSupportAppNavigator
 import com.github.metnyov.addressbook.presentation.common.navigation.RouterProvider
+import com.github.metnyov.addressbook.presentation.common.navigation.toScreen
+import com.github.metnyov.addressbook.presentation.screen.departmentlist.DepartmentListFragment
+import com.github.metnyov.addressbook.presentation.screen.login.LoginFragment
 import moxy.MvpAppCompatActivity
 import org.kodein.di.DIAware
 import org.kodein.di.DITrigger
@@ -36,11 +41,15 @@ class MainActivity : MvpAppCompatActivity(), DIAware, RouterProvider {
         R.id.mainActivityContainer
     )
 
+    private val authDao: AuthDao by instance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_App_Base)
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
+
+        nextRoute()
     }
 
     override fun onResumeFragments() {
@@ -51,5 +60,14 @@ class MainActivity : MvpAppCompatActivity(), DIAware, RouterProvider {
     override fun onPause() {
         navigatorHolder.removeNavigator()
         super.onPause()
+    }
+
+    private fun nextRoute() {
+        val nextScreen = if (authDao.isAuthorized) {
+            DepartmentListFragment.Args().toScreen()
+        } else {
+            LoginFragment().toScreen()
+        }
+        router.newRootScreen(nextScreen)
     }
 }

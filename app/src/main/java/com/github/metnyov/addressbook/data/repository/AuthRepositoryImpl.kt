@@ -1,6 +1,6 @@
 package com.github.metnyov.addressbook.data.repository
 
-import com.github.metnyov.addressbook.common.exceptions.SignInException
+import com.github.metnyov.addressbook.common.exceptions.LoginException
 import com.github.metnyov.addressbook.data.network.AddressBookApi
 import com.github.metnyov.addressbook.domain.source.AuthDao
 import com.github.metnyov.addressbook.domain.source.repository.AuthRepository
@@ -15,7 +15,7 @@ class AuthRepositoryImpl(
         val isSuccessSignIn = result?.success == true
 
         if (!isSuccessSignIn) {
-            throw SignInException(result?.message)
+            throw LoginException(result?.message)
         }
 
         authDao.login(username, password)

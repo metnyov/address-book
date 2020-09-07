@@ -13,4 +13,5 @@ val interactorModule = DI.Module("interactor") {
     bind() from singleton { LoadDirectoryUseCase(instance()) }
     bind() from singleton { GetDepartmentsUseCase(instance()) }
     bind() from singleton { GetEmployeesUseCase(instance()) }
+    bind() from singleton { GetPhotoByEmployeeIdUseCase(instance()) }
 }
