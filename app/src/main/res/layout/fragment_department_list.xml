@@ -10,6 +10,7 @@
         android:id="@+id/toolbarDepartmentList"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"
+        app:menu="@menu/menu_exit"
         app:navigationIcon="@drawable/ic_arrow_back"
         app:title="@string/department_list_title" />
 
