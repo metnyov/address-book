@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">AddressBook</string>
+    <string name="exit">Выход</string>
+    <string name="cancel">Отмена</string>
+    <string name="yes">Да</string>
+
+    <!-- Login -->
+    <string name="login_enter">Вход</string>
+    <string name="login_username">Имя пользователя</string>
+    <string name="login_password">Пароль</string>
+    <string name="login_checkout">Войти</string>
+    <string name="login_error_empty_fields">Необходимо заполнить все поля</string>
+    <string name="login_error_generic">Что-то пошло не так!\nПовторите ещё раз</string>
+
+    <!-- Department list -->
+    <string name="department_list_title">Список отделов</string>
+    <string name="department_list_exit_dialog_message">Вы действительно хотите выйти?</string>
+
+    <!-- Employee list -->
+    <string name="employee_list_empty">Данные обновляются!\nСкоро здесь кто-нибудь появится :)</string>
+
+    <!-- Employee card -->
+    <string name="employee_card_position">Должность:\n%1$s</string>
 </resources>

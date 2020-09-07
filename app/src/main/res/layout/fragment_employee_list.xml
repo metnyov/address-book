@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarEmployeeList"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        tools:title="Список отделов" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srlEmployeeList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/toolbar_height"
+        app:swipeRefreshLayoutProgressSpinnerBackgroundColor="@color/violet_blue">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEmployeeList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/view_item_employee" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEmployeeListEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/toolbar_height"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/employee_list_empty"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <com.github.metnyov.addressbook.presentation.view.LoadingView
+        android:id="@id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/toolbar_height"
+        tools:visibility="gone" />
+
+</FrameLayout>
