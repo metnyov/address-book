@@ -36,8 +36,6 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
-
-        buildConfigField("String", "HOST", "\"${extra["HOST"] as String}\"")
     }
 
     buildTypes {

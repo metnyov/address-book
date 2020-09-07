@@ -49,9 +49,10 @@ val apiModule = DI.Module("api") {
     }
 
     // API
+    val host = "https://contact.taxsee.com"
     bind<AddressBookApi>() with singleton {
         Retrofit.Builder()
-            .baseUrl(BuildConfig.HOST)
+            .baseUrl(host)
             .addConverterFactory(MoshiConverterFactory.create(instance()))
             .client(instance())
             .build()
